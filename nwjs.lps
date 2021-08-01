@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Release"/>
-    <Units Count="17">
+    <Units Count="18">
       <Unit0>
         <Filename Value="nwjs.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -21,8 +21,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="66"/>
-        <CursorPos X="72" Y="90"/>
+        <TopLine Value="168"/>
+        <CursorPos Y="159"/>
         <UsageCount Value="28"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -113,43 +113,47 @@
       </Unit13>
       <Unit14>
         <Filename Value="C:\lazarus\fpc\3.2.0\source\packages\palmunits\src\sysutil.pp"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="58"/>
         <UsageCount Value="12"/>
-        <Loaded Value="True"/>
       </Unit14>
       <Unit15>
         <Filename Value="C:\lazarus\fpc\3.2.0\source\rtl\win\sysutils.pp"/>
         <UnitName Value="SysUtils"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="154"/>
         <UsageCount Value="12"/>
-        <Loaded Value="True"/>
       </Unit15>
       <Unit16>
         <Filename Value="C:\lazarus\fpc\3.2.0\source\packages\fcl-registry\src\regdef.inc"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="3" Y="12"/>
         <UsageCount Value="11"/>
-        <Loaded Value="True"/>
       </Unit16>
+      <Unit17>
+        <Filename Value="C:\lazarus\fpc\3.2.0\source\rtl\objpas\sysutils\finah.inc"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="25" Y="25"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit17>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="unit1.pas"/>
-        <Caret Line="78" TopLine="50"/>
+        <Caret Line="71" Column="12" TopLine="43"/>
       </Position1>
       <Position2>
         <Filename Value="unit1.pas"/>
-        <Caret Line="71" Column="12" TopLine="43"/>
+        <Caret Line="69" Column="18" TopLine="54"/>
       </Position2>
       <Position3>
         <Filename Value="unit1.pas"/>
-        <Caret Line="69" Column="18" TopLine="54"/>
+        <Caret Line="18"/>
       </Position3>
       <Position4>
         <Filename Value="unit1.pas"/>
-        <Caret Line="18"/>
+        <Caret Line="8" Column="27"/>
       </Position4>
       <Position5>
         <Filename Value="unit1.pas"/>
@@ -157,103 +161,103 @@
       </Position5>
       <Position6>
         <Filename Value="unit1.pas"/>
-        <Caret Line="8" Column="27"/>
+        <Caret Line="83" Column="37" TopLine="3"/>
       </Position6>
       <Position7>
         <Filename Value="unit1.pas"/>
-        <Caret Line="83" Column="37" TopLine="3"/>
+        <Caret Line="44" Column="61" TopLine="30"/>
       </Position7>
       <Position8>
         <Filename Value="unit1.pas"/>
-        <Caret Line="44" Column="61" TopLine="30"/>
+        <Caret Line="47" Column="61" TopLine="33"/>
       </Position8>
       <Position9>
         <Filename Value="unit1.pas"/>
-        <Caret Line="47" Column="61" TopLine="33"/>
+        <Caret Line="103" Column="3" TopLine="75"/>
       </Position9>
       <Position10>
         <Filename Value="unit1.pas"/>
-        <Caret Line="103" Column="3" TopLine="75"/>
+        <Caret Line="79" Column="15" TopLine="54"/>
       </Position10>
       <Position11>
         <Filename Value="unit1.pas"/>
-        <Caret Line="79" Column="15" TopLine="54"/>
+        <Caret Line="90" Column="17" TopLine="66"/>
       </Position11>
       <Position12>
         <Filename Value="unit1.pas"/>
-        <Caret Line="90" Column="17" TopLine="66"/>
+        <Caret Line="24" Column="32" TopLine="13"/>
       </Position12>
       <Position13>
         <Filename Value="unit1.pas"/>
-        <Caret Line="24" Column="32" TopLine="13"/>
+        <Caret Line="124" Column="8" TopLine="90"/>
       </Position13>
       <Position14>
         <Filename Value="unit1.pas"/>
-        <Caret Line="124" Column="8" TopLine="90"/>
+        <Caret Line="88" Column="18" TopLine="72"/>
       </Position14>
       <Position15>
         <Filename Value="unit1.pas"/>
-        <Caret Line="88" Column="18" TopLine="72"/>
+        <Caret Line="50" Column="28" TopLine="33"/>
       </Position15>
       <Position16>
         <Filename Value="unit1.pas"/>
-        <Caret Line="50" Column="28" TopLine="33"/>
+        <Caret Line="135" TopLine="110"/>
       </Position16>
       <Position17>
         <Filename Value="unit1.pas"/>
-        <Caret Line="135" TopLine="110"/>
+        <Caret Line="67" TopLine="46"/>
       </Position17>
       <Position18>
         <Filename Value="unit1.pas"/>
-        <Caret Line="67" TopLine="46"/>
+        <Caret Line="26" Column="18" TopLine="18"/>
       </Position18>
       <Position19>
         <Filename Value="unit1.pas"/>
-        <Caret Line="26" Column="18" TopLine="18"/>
+        <Caret Line="93" TopLine="81"/>
       </Position19>
       <Position20>
         <Filename Value="unit1.pas"/>
-        <Caret Line="93" TopLine="81"/>
+        <Caret Line="58" Column="3" TopLine="47"/>
       </Position20>
       <Position21>
         <Filename Value="unit1.pas"/>
-        <Caret Line="58" Column="3" TopLine="47"/>
+        <Caret Line="127" Column="90" TopLine="115"/>
       </Position21>
       <Position22>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="127" Column="90" TopLine="115"/>
+        <Filename Value="nwjs.lpr"/>
+        <Caret Line="23" Column="45"/>
       </Position22>
       <Position23>
         <Filename Value="nwjs.lpr"/>
-        <Caret Line="23" Column="45"/>
+        <Caret Line="10" Column="18"/>
       </Position23>
       <Position24>
         <Filename Value="nwjs.lpr"/>
-        <Caret Line="10" Column="18"/>
+        <Caret Line="22" Column="67"/>
       </Position24>
       <Position25>
         <Filename Value="nwjs.lpr"/>
-        <Caret Line="22" Column="67"/>
+        <Caret Line="18" Column="3"/>
       </Position25>
       <Position26>
-        <Filename Value="nwjs.lpr"/>
-        <Caret Line="18" Column="3"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="111" Column="9" TopLine="97"/>
       </Position26>
       <Position27>
         <Filename Value="unit1.pas"/>
-        <Caret Line="111" Column="9" TopLine="97"/>
+        <Caret Line="109" Column="76" TopLine="84"/>
       </Position27>
       <Position28>
         <Filename Value="unit1.pas"/>
-        <Caret Line="109" Column="76" TopLine="84"/>
+        <Caret Line="134" Column="178" TopLine="104"/>
       </Position28>
       <Position29>
         <Filename Value="unit1.pas"/>
-        <Caret Line="134" Column="178" TopLine="104"/>
+        <Caret Line="109" Column="84" TopLine="105"/>
       </Position29>
       <Position30>
         <Filename Value="unit1.pas"/>
-        <Caret Line="109" Column="84" TopLine="105"/>
+        <Caret Line="147" TopLine="83"/>
       </Position30>
     </JumpHistory>
     <RunParams>

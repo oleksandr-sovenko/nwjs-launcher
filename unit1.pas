@@ -78,50 +78,33 @@ end;
 
 procedure TLauncherForm.RunNodeWebkit();
 var
-  {$IFDEF MSWINDOWS}
-  Result: AnsiString;
-  {$ENDIF}
-
-  FilePath: String;
   AProcess: TProcess;
 
 begin
   Application.ProcessMessages;
 
-  {$IFDEF MSWINDOWS}
   AProcess := TProcess.Create(nil);
   try
     AProcess.ShowWindow  := swoShowNormal;
+
+    {$IFDEF MSWINDOWS}
     AProcess.CommandLine := GetPathNodeWebkit() + ' ' + ExtractFilePath(Application.ExeName);
+    {$ENDIF}
+
+    {$IFDEF DARWIN}
+    AProcess.CommandLine := ExtractFilePath(Application.ExeName) + '/node-webkit';
+    {$ENDIF}
+
     AProcess.Execute;
   finally
    AProcess.Free;
   end;
-  {$ENDIF}
-
-  {$IFDEF DARWIN}
-  FilePath := ExtractFilePath(ParamStr(0));
-  if FileExists(FilePath + '/node-webkit') then
-    begin
-      AProcess := TProcess.Create(nil);
-      try
-        AProcess.ShowWindow  := swoShowNormal;
-        AProcess.CommandLine := FilePath + '/node-webkit';
-        AProcess.Execute;
-      finally
-        AProcess.Free;
-    end;
-  end;
-  {$ENDIF}
 
   Application.Terminate;
 end;
 
 function TLauncherForm.DownloadNodeWebkit(AFrom, ATo: String): Boolean;
 begin
-  Result := False;
-  HTTPClient := TFPHTTPClient.Create(nil);
-
   try
     HTTPClient.OnDataReceived := @DataReceived;
     HTTPClient.AllowRedirect := True;
@@ -140,6 +123,8 @@ end;
 
 procedure TLauncherForm.FormCreate(Sender: TObject);
 begin
+  HTTPClient := TFPHTTPClient.Create(nil);
+
   {$IFDEF MSWINDOWS}
   if GetPathNodeWebkit() = '' then
   {$ENDIF}
@@ -159,7 +144,6 @@ end;
 
 procedure TLauncherForm.TimerTimer(Sender: TObject);
 var
-  AProcess: TProcess;
   Result  : AnsiString;
   TempDir : String;
   URL     : String;
@@ -172,13 +156,13 @@ begin
 
   {$IFDEF MSWINDOWS}
   URL := 'http://downloads.oleksandrsovenko.com/nwjs/windows/nwjs-sdk-v0.54.1-win-x64.exe';
-  FileName := TempDir + '/nwjs-sdk-v0.54.1-win-x64.exe';
   {$ENDIF}
 
   {$IFDEF DARWIN}
   URL := 'http://downloads.oleksandrsovenko.com/nwjs/macos/nwjs-sdk-v0.54.1-osx-x64.pkg';
-  FileName := TempDir + '/nwjs-sdk-v0.54.1-osx-x64.pkg';
   {$ENDIF}
+
+  FileName := ExtractFileName(URL);
 
   if DownloadNodeWebkit(URL, FileName) then
     begin

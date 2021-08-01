@@ -1,12 +1,12 @@
 object LauncherForm: TLauncherForm
-  Left = 588
-  Height = 80
-  Top = 260
+  Left = 451
+  Height = 85
+  Top = 267
   Width = 432
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Launcher'
-  ClientHeight = 80
+  ClientHeight = 85
   ClientWidth = 432
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
@@ -16,7 +16,7 @@ object LauncherForm: TLauncherForm
   object ButtonCancel: TButton
     Left = 176
     Height = 25
-    Top = 48
+    Top = 55
     Width = 80
     Caption = 'Cancel'
     OnClick = ButtonCancelClick
@@ -25,7 +25,7 @@ object LauncherForm: TLauncherForm
   object ProgressBar: TProgressBar
     Left = 8
     Height = 20
-    Top = 24
+    Top = 29
     Width = 416
     TabOrder = 1
   end
@@ -42,6 +42,6 @@ object LauncherForm: TLauncherForm
   object Timer: TTimer
     OnTimer = TimerTimer
     Left = 8
-    Top = 48
+    Top = 54
   end
 end
