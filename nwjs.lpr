@@ -7,12 +7,23 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, Unit1
+  Forms, SysUtils, Unit1
   { you can add units after this };
 
 {$R *.res}
 
+{$IFDEF MSWINDOWS}
+var
+  IconFile: String;
+{$ENDIF}
+
 begin
+  {$IFDEF MSWINDOWS}
+  IconFile := ExtractFilePath(Application.ExeName) + '\app.ico';
+  if FileExists(IconFile) then
+    Application.Icon.LoadFromFile(IconFile);
+  {$ENDIF}
+
   RequireDerivedFormResource := True;
   Application.Scaled := True;
   Application.ShowMainForm := False;

@@ -108,7 +108,6 @@
       <Unit0>
         <Filename Value="nwjs.lpr"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="project1"/>
       </Unit0>
       <Unit1>
         <Filename Value="unit1.pas"/>
