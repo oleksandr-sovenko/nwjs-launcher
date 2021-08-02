@@ -78,27 +78,33 @@ end;
 
 procedure TLauncherForm.RunNodeWebkit();
 var
-  AProcess: TProcess;
+  AProcess  : TProcess;
+  NodeWebkit: String;
 
 begin
   Application.ProcessMessages;
 
-  AProcess := TProcess.Create(nil);
-  try
-    AProcess.ShowWindow  := swoShowNormal;
+  {$IFDEF MSWINDOWS}
+  NodeWebkit := GetPathNodeWebkit() + ' ' + ExtractFilePath(Application.ExeName)
+  {$ENDIF}
 
-    {$IFDEF MSWINDOWS}
-    AProcess.CommandLine := GetPathNodeWebkit() + ' ' + ExtractFilePath(Application.ExeName);
-    {$ENDIF}
+  {$IFDEF DARWIN}
+  NodeWebkit := ExtractFilePath(Application.ExeName) + '/node-webkit';
+  if not FileExists(NodeWebkit) then
+    NodeWebkit := '';
+  {$ENDIF}
 
-    {$IFDEF DARWIN}
-    AProcess.CommandLine := ExtractFilePath(Application.ExeName) + '/node-webkit';
-    {$ENDIF}
-
-    AProcess.Execute;
-  finally
-   AProcess.Free;
-  end;
+  if not (NodeWebkit = '') then
+    begin
+      AProcess := TProcess.Create(nil);
+      try
+        AProcess.ShowWindow  := swoShowNormal;
+        AProcess.CommandLine := NodeWebkit;
+        AProcess.Execute;
+      finally
+        AProcess.Free;
+      end;
+    end;
 
   Application.Terminate;
 end;
@@ -108,7 +114,7 @@ begin
   try
     HTTPClient.OnDataReceived := @DataReceived;
     HTTPClient.AllowRedirect := True;
-    HTTPClient.AddHeader('User-Agent','Mozilla/5.0 (compatible; fpweb)');
+    HTTPClient.AddHeader('User-Agent', 'Launcher NW.js');
     try
       HTTPClient.Get(AFrom, ATo);
       Result := True;
@@ -144,10 +150,10 @@ end;
 
 procedure TLauncherForm.TimerTimer(Sender: TObject);
 var
-  Result  : AnsiString;
-  TempDir : String;
-  URL     : String;
-  FileName: String;
+  Result    : AnsiString;
+  TempDir   : String;
+  URL       : String;
+  NodeWebkit: String;
 
 begin
   Application.ProcessMessages;
@@ -162,18 +168,18 @@ begin
   URL := 'http://downloads.oleksandrsovenko.com/nwjs/macos/nwjs-sdk-v0.54.1-osx-x64.pkg';
   {$ENDIF}
 
-  FileName := ExtractFileName(URL);
+  NodeWebkit := TempDir + '/' + ExtractFileName(URL);
 
-  if DownloadNodeWebkit(URL, FileName) then
+  if DownloadNodeWebkit(URL, NodeWebkit) then
     begin
-      if FileExists(FileName) then
+      if FileExists(NodeWebkit) then
         begin
           {$IFDEF MSWINDOWS}
-          RunCommand(FileName, [], Result);
+          RunCommand(NodeWebkit, [], Result);
           {$ENDIF}
 
           {$IFDEF DARWIN}
-          RunCommand('open', [FileName], Result);
+          RunCommand('open', [NodeWebkit], Result);
           {$ENDIF}
         end;
 
@@ -199,4 +205,5 @@ end;
 
 
 end.
+
 
